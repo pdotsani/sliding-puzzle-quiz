@@ -1,0 +1,35 @@
+ul.sliding-puzzle {
+	list-style: none;
+	width: 240px;
+	height: 240px;
+	border: 15px solid black;
+	border-radius: 15px;
+	margin: 0;
+	padding: 0;
+  background: black;
+}
+
+ul.sliding-puzzle > li.tile {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 0px -2px;
+	padding: 15px;
+	border-top: 10px solid lightgrey;
+	border-left: 10px solid lightgrey;
+	border-bottom: 10px solid grey;
+	border-right: 10px solid grey;
+  background: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+figure.sliding-puzzle-figure {
+	width: 240px;
+	margin: 0 auto;
+}
+
+figcaption, 
+ul.sliding-puzzle > li.tile {
+	text-align: center;
+}
