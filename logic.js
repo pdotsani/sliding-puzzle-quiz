@@ -32,7 +32,6 @@
 	// Get the location of a piece with a given value
 	function getLocation(val) {
 		var loc = [];
-
 		for(var i = 0; i < 3; i++) {
 			for(var j = 0; j < 3; j++) {
 				if(state[i][j] === val) {
@@ -51,7 +50,6 @@
 		var moves = [];
 		var blank = getLocation('');
 		var canmove = false;
-
 		// Checks surrounding cells of blank space
 		if(blank[0] - 1 >= 0) {
 			moves.push([blank[0] - 1, blank[1]]);
@@ -65,14 +63,12 @@
 		if(blank[1] + 1 < 3) {
 			moves.push([blank[0], blank[1] + 1]);
 		}
-
-		// If clicked piece matches one of the possible moves, move is ok
+		// If clicked piece matches one of the possible move locations, move is ok
 		moves.forEach(function(move) {
 			if(state[move[0]][move[1]] === val) {
 				canmove = true;
 			}
 		});
-
 		return canmove;
 	}
 
@@ -95,20 +91,18 @@
 	function startPuzzle() {
 		var rowCt = 0;
 		var col = 0;
-
 		// Create blank cell with style 'tile blank' (see CSS)
 		var blankCell = document.createElement('li');
 		blankCell.className = 'tile blank';
 		puzzle.append(blankCell);
-
 		// Add event listeners and set up initial state
 		for(var i = 0; i < cells.length; i++) {
 			state[col][rowCt] = cells[i].innerHTML;
 			cells[i].addEventListener("click", swap);
-			rowCt += 1;
+			rowCt++;
 			if(rowCt === 3) {
 				rowCt = 0;
-				col += 1;
+				col++;
 			}
 		};	
 	}
