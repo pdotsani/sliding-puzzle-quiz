@@ -1,11 +1,11 @@
 /*
- * Game Logic - 8 tile version
+ * Game Logic - 15 tile version
  *
  */
 
 (function() {
 	// Holds the state of the puzzle
-	var state = [[],[],[]];
+	var state = [[],[],[],[]];
 
 	// Global elements saved to variables
 	var puzzle = document.getElementsByClassName('sliding-puzzle')[0];
@@ -14,8 +14,8 @@
 	// Refresh the gameboard after a click or other move
 	function render() {
 		var ct = 0;
-		for(var i = 0; i < 3; i++) {
-			for(var j = 0; j < 3; j++) {
+		for(var i = 0; i < 4; i++) {
+			for(var j = 0; j < 4; j++) {
 				cells[ct].innerHTML = state[i][j];
 				if(state[i][j] === '') {
 					cells[ct].className = 'tile blank';
@@ -32,8 +32,8 @@
 	// Get the location of a piece with a given value
 	function getLocation(val) {
 		var loc = [];
-		for(var i = 0; i < 3; i++) {
-			for(var j = 0; j < 3; j++) {
+		for(var i = 0; i < 4; i++) {
+			for(var j = 0; j < 4; j++) {
 				if(state[i][j] === val) {
 					loc.push(i);
 					loc.push(j);
@@ -57,10 +57,10 @@
 		if(blank[1] - 1 >= 0) {
 			moves.push([blank[0], blank[1] - 1]);
 		}
-		if(blank[0] + 1 < 3) {
+		if(blank[0] + 1 < 4) {
 			moves.push([blank[0] + 1, blank[1]]);
 		}
-		if(blank[1] + 1 < 3) {
+		if(blank[1] + 1 < 4) {
 			moves.push([blank[0], blank[1] + 1]);
 		}
 		// If clicked piece matches one of the possible move locations, move is ok
@@ -100,11 +100,12 @@
 			state[col][rowCt] = cells[i].innerHTML;
 			cells[i].addEventListener("click", swap);
 			rowCt++;
-			if(rowCt === 3) {
+			if(rowCt === 4) {
 				rowCt = 0;
 				col++;
 			}
-		};	
+		};
+		console.log(state);	
 	}
 	startPuzzle();
 })();
