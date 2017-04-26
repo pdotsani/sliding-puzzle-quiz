@@ -2,7 +2,18 @@
 
 ## Patrick's Notes  
   
-I've completed the 8 tile version and left all the source code in the root directory of this repo. The 15 tile version is saved in the '15' folder and can be run by loading the `index.html` file in any browser.
+### Running the Puzzle  
+  
+Two versions of the puzzle are available, the 15 piece and the 8 piece. To run, open the `index.html` file of the specific version in any web browser.
+
+### Screenshots  
+  
+Screenshots of the app running can be found in the [screenshots folder](https://github.com/pdotsani/sliding-puzzle-quiz/tree/master/screenshots).
+  
+### Misc.  
+  
+- Despite my efforts, I was unable to write the game logic without using a 'blank' piece. I am curious how this would be achieved. I'm assuming it would have something to do with the positioning of the tiles. 
+- I tried my hand at creating a shuffle function to juggle the tiles around, but I was unable to get it working due to the logic in place and without exposing too much of the game logic.
   
 ---  
   
